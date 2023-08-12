@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>this is show to do page</h1>
+
+{% if data %}
+<div style="width: 90%; margin: auto;">
+  <table class="table table-bordered">
+    <thead>
+      <tr class="text-center">
+        <th scope="col"> Name </th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in data %}
+      <tr style="margin-auto">
+        <th>{{todo.name}}</th>
+        <td>{{todo.description}}</td>
+        <td>{{todo.status}}</td>
+        <td><a href="" class="btn btn-secondary">Edit</a>
+          <a href="{% url 'deleteTodo' id=todo.id %}" class="btn btn-danger">Delete</a>
+          <a href="" class="btn btn-danger">Complate</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% else %}
+<h1 class="text-center text-warning">No data avilable</h1>
+
+{% endif %}
+
+{% endblock content %}
