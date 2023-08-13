@@ -1,10 +1,12 @@
 from django.urls import path
-from firstapp.views import home, addToDo,showToDo, deleteTodo,editTodo
+from firstapp.views import home, add_task, show_tasks, edit_task, complete_task, delete_task, completed_tasks
 
 urlpatterns = [
     path('', home, name='home'),
-    path('addtodo/', addToDo, name='addToDo'),
-    path('showtodo/', showToDo, name='showToDo'),
-    path('delete/<int:id>', deleteTodo, name="deleteTodo"),
-    path('edit/<int:id>', editTodo, name="editTodo"),
+    path('add/', add_task, name='add_task'),
+    path('show/', show_tasks, name='show_tasks'),
+    path('edit/<int:task_id>/', edit_task, name='edit_task'),
+    path('complete/<int:task_id>/', complete_task, name='complete_task'),
+    path('delete/<int:task_id>/', delete_task, name='delete_task'),
+    path('completed/', completed_tasks, name='completed_tasks'),
 ]

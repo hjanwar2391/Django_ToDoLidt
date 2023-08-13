@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Completed Tasks</h2>
+<ul>
+  {% for task in completed_tasks %}
+    <li>{{ task.taskTitle }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

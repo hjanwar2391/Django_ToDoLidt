@@ -21,9 +21,9 @@
         <th>{{todo.name}}</th>
         <td>{{todo.description}}</td>
         <td>{{todo.status}}</td>
-        <td><a href="" class="btn btn-secondary">Edit</a>
+        <td><a href="{% url 'editTodo' id=todo.id %}" class="btn btn-secondary">Edit</a>
           <a href="{% url 'deleteTodo' id=todo.id %}" class="btn btn-danger">Delete</a>
-          <a href="" class="btn btn-danger">Complate</a>
+          <a href="{% url 'completeToDo' id=todo.id %}" class="btn btn-danger">Complate</a>
         </td>
       </tr>
       {% endfor %}

@@ -31,10 +31,13 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item active ">
-                        <a class="nav-link" href="{% url 'showToDo' %}">Show To Do</a>
+                        <a class="nav-link" href="{% url 'show_tasks' %}">Show Task</a>
                     </li>
                     <li class="nav-item active ">
-                        <a class="nav-link" href="{% url 'addToDo'  %}">Add To Do</a>
+                        <a class="nav-link" href="{% url 'add_task'  %}">Add Task</a>
+                    </li>
+                    <li class="nav-item active ">
+                        <a class="nav-link" href="{% url 'completed_tasks'  %}">Complated Task</a>
                     </li>
                 </ul>
                 <form class="d-flex">
